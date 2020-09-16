@@ -1,13 +1,17 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.io.File;
+import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class Ukol {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws IOException {
         Scanner sc = new Scanner(System.in);
         ArrayList<String> StringList = new ArrayList<>();
         String input = "";
+        String output = "C:/Users/jakub/Desktop/OPS/OPS_Ukol/OPS_Suma-Prumer-Max/output.txt";
         int suma = 0;
         int prumer;
 
@@ -31,9 +35,14 @@ public class Ukol {
         }
         
         prumer = suma / NumberList.size();
-        System.out.println("Soucet vsech cisel je: " + suma);
-        System.out.println("Prumer: " + prumer);
-        System.out.println("Nejmensi cislo: " + Collections.min(NumberList));
-        System.out.println("Nejvetsi cislo: " + Collections.max(NumberList));
+
+        FileWriter writer = new FileWriter(output);
+
+        writer.write("\nSoucet vsech cisel je: " + suma);
+        writer.write("\nPrumer: " + prumer);
+        writer.write("\nNejmensi cislo: " + Collections.min(NumberList));
+        writer.write("\nNejvetsi cislo: " + Collections.max(NumberList));
+
+        writer.flush();
     }
 }

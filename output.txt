@@ -1,0 +1,5 @@
+
+Soucet vsech cisel je: 175
+Prumer: 58
+Nejmensi cislo: 45
+Nejvetsi cislo: 85
